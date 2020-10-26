@@ -3,6 +3,7 @@ import React from 'react';
 import {Route, Switch, Redirect,Link} from 'react-router-dom';
 
 // 引入子组件
+// 测试
 import Reg from './components/Reg';
 import Login from './components/Login';
 import Home from './components/Home';
