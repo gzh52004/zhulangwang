@@ -1,17 +1,20 @@
 // 引入依赖
 import React from 'react';
-import {Route, Switch, Redirect,Link} from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect, Link } from 'react-router-dom';
 
 // 引入子组件
-// 测试
 import Reg from './components/Reg';
 import Login from './components/Login';
 import Home from './components/Home';
 import BookShelf from './components/Bookshelf';
 import Money from './components/Money';
-import Man from './components/Man';
-import Woman from './components/Woman';
+import Boy from './components/Boy';
+import Girls from './components/Girls';
 import Client from './components/Client';
+import Bookdetalis from './components/Bookdetalis';
+
+import './assets/sass/public/vw.scss';
+import './assets/sass/public/common.scss';
 
 let App =  (props) => {
    const menu = [
@@ -39,16 +42,16 @@ let App =  (props) => {
       {
          id: 4,
          title: '男生',
-         path: '/man',
-         name: 'man',
-         component: Man,
+         path: '/boy',
+         name: 'boy',
+         component: Boy,
       },
       {
          id: 5,
          title: '女生',
-         path: '/woman',
-         name: 'woman',
-         component: Woman,
+         path: '/girls',
+         name: 'girls',
+         component: Girls,
       },
       {
          id: 6,
@@ -57,25 +60,34 @@ let App =  (props) => {
          name: 'client',
          component: Client,
       },
+      {
+         id: 7,
+         title: '书籍详情',
+         path: '/bookdetalis',
+         name: 'bookdetalis',
+         component: Bookdetalis,
+      },
    ];
 
-   return ( 
+   return (
       <div>
-         <ul>
+         {/* <ul>
             {
                // 编程式导航,点击跳转到对应子路由页面
                menu.map(item => 
                <li key={item.id} onClick={()=>{props.history.push(item.path)}}>{item.title}</li> )
                // <li key={item.id}><Link to={item.path}>{item.title}</Link></li>)
             }
-         </ul>
+         </ul> */}
          {/* 渲染子路由组件页面 */}
          <Switch>
             {
-               menu.map(item => <Route key={item.id} path={item.path} component={item.component} /> )
+               menu.map(item => <Route key={item.id} path={item.path} component={item.component} />)
             }
+            <Route path='/boy' component={Boy} />
             <Route path='/Reg' component={Reg} />
             <Route path='/login' component={Login} />
+            <Route path='/bookdetalis' component={Bookdetalis} />
             <Route path='/notfound' render={() => <div>404页面</div>} />
             <Redirect from='/' to='/home' exact />
             <Redirect to='/notfound' />

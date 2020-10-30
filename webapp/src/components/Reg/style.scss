@@ -1,0 +1,12 @@
+@function vw($n) {
+   @return ($n *100 / 750)+vw;
+}
+
+.am-navbar{
+   background-color: #47a1df;
+}
+.nav{
+   width:100%;
+   height:vw(120);
+   background-color: #49494b;
+}

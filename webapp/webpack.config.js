@@ -32,8 +32,12 @@ module.exports = {
                   // 用于把JSX编译成React.createElement()
                   presets:['@babel/preset-react'], 
                   //解决箭头函数问题，可以在类组件中直接使用箭头函数，不用每次都获取自定义函数中的this                                        
-                  plugins:['@babel/plugin-proposal-class-properties'],
-               }
+                  plugins:[
+                     ['@babel/plugin-proposal-decorators',{legacy: true}],//解决 ES7装饰器写法问题
+                     ['@babel/plugin-proposal-class-properties',{loose:true}],  
+                     // antd按需加载
+                  ],
+               } 
             }]
          },
          // css文件加载器
@@ -43,9 +47,9 @@ module.exports = {
          },
          // scss文件加载器
          {
-            test:'/\.scss$/',
+            test:/\.scss$/,
             use:['style-loader','css-loader','sass-loader']  //书写顺序为倒序
-         }
+         },
       ]
    },
 
