@@ -23,7 +23,7 @@ const Login = function (props) {
                <li><i><LockOutlined /></i><input type="password" placeholder='请输入密码'/></li>
             </ul>
             <p><span>登录</span></p>
-            <b><i>立即注册</i><i>忘记密码</i></b>
+            <b><i onClick={()=>{props.history.push('/reg')}}>立即注册</i><i>忘记密码</i></b>
          </div>
          
          <div className='auth-log'>

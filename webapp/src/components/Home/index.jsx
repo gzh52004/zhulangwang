@@ -97,14 +97,14 @@ class Home extends React.Component {
 
    render() {
       return (
-         <div>
+         <div className="home">
             {/* 顶部 */}
             <div className="top">
                {/* 头部 */}
                <div className="head">
                   <h1><img src="https://s.zhulang.com/wap/v2/style/img/mlogo-170730.png" alt="" /></h1>
                   <a className="search">搜小说、作者<i><SearchOutlined /></i></a >
-                  <a className="user"><UserOutlined /></a>
+                  <a className="user"><UserOutlined onClick={() => { this.props.history.push('/login') }} /></a>
                </div>
                {/* 轮播图 */}
                <div className="Carousel">
@@ -123,7 +123,7 @@ class Home extends React.Component {
                               <img
                                  src={val.img}
                                  alt=""
-                                 style={{ width: '100%', verticalAlign: 'top' }}
+                                 style={{ width: '100%', height: 134, verticalAlign: 'top' }}
                                  onLoad={() => {
                                     // fire window resize event to change height
                                     window.dispatchEvent(new Event('resize'));
@@ -155,32 +155,32 @@ class Home extends React.Component {
                <div className="part1">
                   <h3>编辑推荐</h3>
                   <ul>
-                     <li><a href="">
+                     <li onClick={()=>{this.props.history.push('/bookdetalis')}}><a>
                         <img src="https://i.zhulang.com/xxs_book_cover/image/67/79/677942_x160.jpg" alt="" />
                         <div>
                            <h4>传国工匠</h4>
                            <span>陈酿 | 人物传记</span>
                            <p>中国东南沿海瓯江流域，为了一个七十年前不同寻常的盟约，五家顶级瓯派（温州）匠工的传人在寻找秘笈《瓯宝图》过程中，与境外正邪两大力量之间发生殊死冲突及各派瓯越匠人之间颇有历史渊源的爱恨情仇的传奇。
-                              【向新中国成立70周年献礼参赛作品】本书荣获2019优秀网络文学推介、2019扬子江原创网络文学大赛特别奖
+                           【向新中国成立70周年献礼参赛作品】本书荣获2019优秀网络文学推介、2019扬子江原创网络文学大赛特别奖
 
-                              【主要故事线索】：
-                              1、中国瓯匠与上世纪来到中国的传教士订立了70年护宝盟约。
-                              2、瓯匠传人为寻找《瓯宝图》以及“瓯宝”，与境外邪恶势力的生死夺宝。
+                           【主要故事线索】：
+                           1、中国瓯匠与上世纪来到中国的传教士订立了70年护宝盟约。
+                           2、瓯匠传人为寻找《瓯宝图》以及“瓯宝”，与境外邪恶势力的生死夺宝。
                               3、瓯匠传人之间的几代人爱恨情仇以及与境外善恶两大力量的历史恩怨纠缠。</p>
                         </div>
                      </a></li>
-                     <li><a href="">
+                     <li onClick={()=>{this.props.history.push('/bookdetalis')}}><a>
                         <img src="https://i.zhulang.com/book_cover/image/73/86/738645_x160.jpg" alt="" />
                         <div>
                            <h4>大明工业帝国</h4>
                            <span>三酸二碱 | 唐宋元明</span>
                            <p>毛瑟步枪、蒸汽火车、蒸汽机船……
-                              工科博士回到古代，建立工业体系，打造一个领先世界的科技王朝。
-                              炮轰西方国门。
+                           工科博士回到古代，建立工业体系，打造一个领先世界的科技王朝。
+                           炮轰西方国门。
                               逼迫西方各国签订无数不平等条约！</p>
                         </div>
                      </a></li>
-                     <li><a href="">
+                     <li onClick={()=>{this.props.history.push('/bookdetalis')}}><a>
                         <img src="https://i.zhulang.com/book_cover/image/56/4/560433_x160.jpg" alt="" />
                         <div>
                            <h4>修罗神魂</h4>
@@ -260,8 +260,8 @@ class Home extends React.Component {
                            <h4>大别山下小女人<span>已经结束</span></h4>
                            <span>金龙子 | 成功励志</span>
                            <p>在大西北当兵退伍的方琳琳，在返家的路上，遇到一对骑马结婚的新人，走近时发现新郎是与她刚刚失去联系一个月的男友贾正，而新娘则是她的同学胡玥。失去理智的方琳琳，大闹接亲现场。
-                              涉世未深的妹妹方淑淑与网友约会，险遭伤害，做芝麻油坊生意的父亲遭遇车祸之灾。年事已高的母亲，心脏病发作，住进了医院。方琳琳最后决心到大城市发展。
-                              在灯红酒绿的都市中，毫无一技之长的方琳琳，遭遇着谋生的艰辛，是无数曾经脱下军装回到社会的退伍军人遭遇的缩影之一。方琳琳开过大货车、当过女保安、当过私人司机，又做过服装厂的女工。
+                           涉世未深的妹妹方淑淑与网友约会，险遭伤害，做芝麻油坊生意的父亲遭遇车祸之灾。年事已高的母亲，心脏病发作，住进了医院。方琳琳最后决心到大城市发展。
+                           在灯红酒绿的都市中，毫无一技之长的方琳琳，遭遇着谋生的艰辛，是无数曾经脱下军装回到社会的退伍军人遭遇的缩影之一。方琳琳开过大货车、当过女保安、当过私人司机，又做过服装厂的女工。
                               最终方琳琳放弃了在大城市的发展，回农村继承了父亲的芝麻油坊的生意………</p>
                         </div>
                      </a></li>
@@ -284,7 +284,7 @@ class Home extends React.Component {
                            <h4>太古神祖</h4>
                            <span>空无痕 | 东方玄幻</span>
                            <p>古之武者引九虚星辰之力，结星辰印记，修炼星魂，壮大己身。
-                              武道圣贤遨游九虚星辰万界，无所不能。
+                           武道圣贤遨游九虚星辰万界，无所不能。
                                  少年萧凡装疯卖傻五年，一朝觉醒，重回巅峰，誓要走出一个朗朗乾坤……</p>
                         </div>
                      </li>
@@ -303,7 +303,7 @@ class Home extends React.Component {
                      <span>海量独家小说，完美阅读体验</span>
                   </section>
                   <div className='login'>
-                     <span>登录</span><em><BackTop style={{ display: "inline-block" }} /><BackTop style={{ display: "inline-block" }}>返回顶部</BackTop></em>
+                     <span onClick={() => { this.props.history.push('/login') }}>登录</span><em><BackTop style={{ display: "inline-block" }} /><BackTop style={{ display: "inline-block" }}>返回顶部</BackTop></em>
                   </div>
                   <div className='search'>
                      <input type="text" placeholder='搜索书名、作者、分类等' />
