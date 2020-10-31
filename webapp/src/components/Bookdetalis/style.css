@@ -4,7 +4,8 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -317,7 +318,7 @@ i {
 
 .show-look-many a span {
   position: absolute;
-  top: 52.3rem;
+  top: 51.9rem;
   width: 0.266667rem;
   height: 0.266667rem;
   border-top: 0.266667rem solid #0ae;
