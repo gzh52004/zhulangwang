@@ -39,7 +39,7 @@ class Bookdetalis extends React.Component {
 
                             <div className="icons-list"
                                 key='1'>
-                                <HomeOutlined />
+                                <HomeOutlined onClick={()=>{this.props.history.push('/home')}} />
                             </div>
 
                         ]}

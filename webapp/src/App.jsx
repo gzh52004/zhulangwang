@@ -16,7 +16,7 @@ import Bookdetalis from './components/Bookdetalis';
 import './assets/sass/public/vw.scss';
 import './assets/sass/public/common.scss';
 
-let App =  (props) => {
+let App = (props) => {
    const menu = [
       {
          id: 1,
@@ -60,31 +60,22 @@ let App =  (props) => {
          name: 'client',
          component: Client,
       },
-      {
-         id: 7,
-         title: '书籍详情',
-         path: '/bookdetalis',
-         name: 'bookdetalis',
-         component: Bookdetalis,
-      },
+      // {
+      //    id: 7,
+      //    title: '书籍详情',
+      //    path: '/bookdetalis',
+      //    name: 'bookdetalis',
+      //    component: Bookdetalis,
+      // },
    ];
 
    return (
       <div>
-         {/* <ul>
-            {
-               // 编程式导航,点击跳转到对应子路由页面
-               menu.map(item => 
-               <li key={item.id} onClick={()=>{props.history.push(item.path)}}>{item.title}</li> )
-               // <li key={item.id}><Link to={item.path}>{item.title}</Link></li>)
-            }
-         </ul> */}
          {/* 渲染子路由组件页面 */}
          <Switch>
             {
                menu.map(item => <Route key={item.id} path={item.path} component={item.component} />)
             }
-            <Route path='/boy' component={Boy} />
             <Route path='/Reg' component={Reg} />
             <Route path='/login' component={Login} />
             <Route path='/bookdetalis' component={Bookdetalis} />
