@@ -8,7 +8,8 @@
    
    ul li {
    
-      display: block;
+      // display: block;
+      display: inline-block;
       width: vw(700);
       height: vw(100);
       border-radius: vw(10);
@@ -16,11 +17,14 @@
       border: none;
       margin: vw(30) 0 0 vw(25);
       line-height: vw(100);
-   
+      color: #555;
+      
    
       label {
-         color: #333;
+         color: #555;
          margin: 0 vw(30) 0 vw(22);
+         display: inline-block;
+
       }
    
       input {
@@ -28,6 +32,7 @@
          height: vw(60);
          border: none;
       }
+      
    
       #pass {
          margin-left: vw(21);
@@ -36,6 +41,8 @@
    
    #btn {
       display: block;
+      
+      text-align: center;
       width: vw(700);
       height: vw(100);
       color: #fff;
@@ -86,4 +93,25 @@
          width: vw(245);
       }
    }
+}
+
+.regForm{
+   padding: vw(35) vw(20) 0 vw(30) ;
+   Input{
+   width: vw(680);
+   height: vw(80);
+   text-indent:vw(20);
+   display: inline-block;
+   border: vw(.1) solid #dfdfdf;
+   border-radius: vw(8);
+   }
+   svg{
+      display: none;
+   }
+   .btn{
+     
+      background-color: transparent;
+      border: 0;
+   }
+   
 }
