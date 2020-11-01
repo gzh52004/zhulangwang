@@ -16,6 +16,11 @@ module.exports = {
    },
 
    resolve:{
+
+      alias:{
+         "@":path.resolve('./src'),
+     },
+
       // 默认扩展名
       extensions:['.js','.jsx']
    },

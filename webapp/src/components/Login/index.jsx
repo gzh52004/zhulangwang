@@ -6,6 +6,8 @@ import { UserOutlined,HomeOutlined,LockOutlined} from '@ant-design/icons';
 import { Form, Input, Button, Checkbox, message } from 'antd';
 import request from '../../utils/request';
 
+import store from '../../store';
+
 import 'antd-mobile/dist/antd-mobile.css';
 import './style.scss';
 
@@ -49,14 +51,39 @@ const Login = function (props) {
         console.log(data,1111111)
 
         if (data.code) {
+         const action ={type:'login',user:data}
+            store.dispatch(action);
+            console.log(data,66666666666)
+            console.log('newdata',store.getState())
+
+            // 登录成功带回原来的地址 如果没有,就回到主页
+           const {search} =props.location;
+           const pathname =search.match(/targetUrl\=([\/\w\-]+)/)
+           let targetUrl;
+           if(pathname){
+               targetUrl = pathname[1]
+           }
+           console.log('targetUrl',targetUrl)
+           props.history.push({
+               pathname:targetUrl || '/home'
+           })
+
          return Promise.resolve();
-       }else{
-         const mistaken=document.getElementsByClassName('mistaken')[0];
-         mistaken.className='loginActive';
+
+         
+
+
+
+
+       }else{         
+          const mistaken=document.getElementsByClassName('mistaken')[0];
+          mistaken.className='loginActive';
+          setTimeout(()=>{
+          mistaken.className='mistaken';   
+         },3000)
        }
        
       }
-
 
    return (
       <div>
@@ -68,9 +95,6 @@ const Login = function (props) {
             ]}
          >登录逐浪网</NavBar>
 
-
-
-
          <div className='login'>
             <Form
             className="loginForm"
@@ -80,21 +104,21 @@ const Login = function (props) {
             >
             <ul>
                <li><i><UserOutlined /></i>
-               <Form.Item
-               name="username"
-               rules={rules.username}
-               hasFeedback
-               ><Input placeholder='请输入用户名' /></Form.Item>
+                  <Form.Item
+                  name="username"
+                  rules={rules.username}
+                  hasFeedback
+                  ><Input placeholder='请输入用户名' /></Form.Item>
                {/* <input type="text" placeholder='用户名/手机号'/> */}
                
                </li>
                <li><i><LockOutlined /></i>
-               <Form.Item
-               name="password"
-               rules={rules.password}
-               hasFeedback
-               ><Input.Password placeholder='请输入密码' /></Form.Item>
-               {/* <input type="password" placeholder='请输入密码'/> */}
+                  <Form.Item
+                  name="password"
+                  rules={rules.password}
+                  hasFeedback
+                  ><Input.Password placeholder='请输入密码' /></Form.Item>
+                  {/* <input type="password" placeholder='请输入密码'/> */}
                </li>
             </ul>
             <b
@@ -102,16 +126,17 @@ const Login = function (props) {
             style={{color:'red'}}>用户名或密码错误</b>
 
             <div className='loginBtn'><span>
-            <Form.Item>
-               <Button type="primary" htmlType="submit"
-               style={{background:'transparent',
-               border:'0',
-               color:'#fff',
-            }} >登录
-               </Button>
-            </Form.Item>
-            </span></div>
+               <Form.Item>
+                  <Button type="primary" htmlType="submit"
+                  style={{background:'transparent',
+                  border:'0',
+                  color:'#fff',
+               }} >登录
+                  </Button>
+               </Form.Item>
+               </span></div>
             </Form>
+
             <b className='auth'><i onClick={()=>{props.history.push('/reg')}}>立即注册</i><i>忘记密码</i></b>
          </div>
          
