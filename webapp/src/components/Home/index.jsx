@@ -145,7 +145,6 @@ class Home extends React.Component {
                         hasLine={false}
                         data={this.data}
                         activeStyle={false}
-                        // onClick={() => { this.props.history.push('/boy') }}
                         onClick={(item, index) => { this.props.history.push(item.path) }}
                      />
                   </div>
