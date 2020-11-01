@@ -9,7 +9,7 @@ import App from './App';
 
 ReactDOM.render(
  
-    <HashRouter>
+  <HashRouter>
     <App />
   </HashRouter>,
   
