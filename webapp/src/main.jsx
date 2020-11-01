@@ -13,9 +13,9 @@ const Router = process.env.NODE_ENV === 'development' ? HashRouter : BrowserRout
 
 // 渲染节点或组件
 render(
-   <Router>
+   <HashRouter>
       <Route component={App} />
-   </Router>
+   </HashRouter>
    ,
    document.querySelector('#app')
 )

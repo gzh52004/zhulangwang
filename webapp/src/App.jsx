@@ -12,6 +12,7 @@ import Boy from './components/Boy';
 import Girls from './components/Girls';
 import Client from './components/Client';
 import Bookdetalis from './components/Bookdetalis';
+import Mine from './components/Mine';
 
 import './assets/sass/public/vw.scss';
 import './assets/sass/public/common.scss';
@@ -60,13 +61,20 @@ let App = (props) => {
          name: 'client',
          component: Client,
       },
-      // {
-      //    id: 7,
-      //    title: '书籍详情',
-      //    path: '/bookdetalis',
-      //    name: 'bookdetalis',
-      //    component: Bookdetalis,
-      // },
+      {
+         id: 7,
+         title: '书籍详情',
+         path: '/bookdetalis',
+         name: 'bookdetalis',
+         component: Bookdetalis,
+      },
+      {
+         id: 8,
+         title: '我的',
+         path: '/mine',
+         name: 'mine',
+         component: Mine,
+      },
    ];
 
    return (

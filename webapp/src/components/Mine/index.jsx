@@ -10,22 +10,22 @@ import 'antd-mobile/dist/antd-mobile.css';
 import './style.scss'
 
 
-let Money = function(props){
+let Mine = function(props){
    return(
       <div>
-          <div className="Montop">
+          <div className="Minetop">
                <NavBar
                   icon={<Icon type="left" onClick={() => props.history.push("/home")} />}
                   rightContent={[<HomeOutlined key="1" onClick={() => props.history.push("/home")} />]}
-               >充值</NavBar>
+               >我的</NavBar>
             </div>
-           充值
+           我的
       </div>
    )
 }
 
 // 导出此组件
-Money = withAuth(Money);
+Mine = withAuth(Mine);
 
-export default Money;
+export default Mine;
 
