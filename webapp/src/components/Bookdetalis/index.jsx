@@ -9,6 +9,7 @@ import 'whatwg-fetch';
 
 import Home from '../Home/index';
 import Login from '../Login/index';
+import Bookcatalog from '../Bookcatalog/index';
 
 import 'antd-mobile/dist/antd-mobile.css';
 // import './bookdetalis.css';
@@ -60,6 +61,13 @@ class Bookdetalis extends React.Component {
             name: 'home',
             component: Home,
         },
+        {
+            id: 2,
+            title: '目录',
+            path: '/bookcatalog',
+            name: 'bookcatalog',
+            component: Bookcatalog,
+        },
         
      ]
   
@@ -75,6 +83,10 @@ class Bookdetalis extends React.Component {
     // 返回首页的功能
      home_index(){
          this.props.history.push('/home')
+     }
+
+     book_catalog() {
+         this.props.history.push('./bookcatalog')
      }
 
     render() {
@@ -286,7 +298,7 @@ class Bookdetalis extends React.Component {
                         <span>海量独家小说，完美阅读体验</span>
                     </section>
                     <div className='login'>
-                        <span>登录</span><em><BackTop style={{ display: 'inline-block' }} />返回顶部</em>
+                        <span onClick={this.book_catalog.bind(this)}>登录</span><em><BackTop style={{ display: 'inline-block' }} />返回顶部</em>
                     </div>
                     <div className='search'>
                         <input type="text" placeholder='搜索书名、作者、分类等' />

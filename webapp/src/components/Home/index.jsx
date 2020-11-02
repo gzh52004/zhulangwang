@@ -10,6 +10,7 @@ import Boy from '../Boy/index.jsx';
 import Girls from '../Girls/index.jsx';
 import Client from '../Client/index.jsx';
 
+
 import 'antd-mobile/dist/antd-mobile.css';
 import './style.scss';
 
@@ -225,7 +226,7 @@ class Home extends React.Component {
                         <span>混沌初始</span>
                      </a>
                   </ul>
-                  <div className="channel"><a href="">进入男生频道 ></a></div>
+                  <div className="channel"><a href="">进入男生频道 </a></div>
                </div>
                <div className="part2">
                   <h3>女生专区</h3>
@@ -255,7 +256,7 @@ class Home extends React.Component {
                         <span>天瓷国芳</span>
                      </a>
                   </ul>
-                  <div className="channel"><a href="">进入女生频道 ></a></div>
+                  <div className="channel"><a href="">进入女生频道 </a></div>
                </div>
                <div className="part3">
                   <h3>限时免费</h3>

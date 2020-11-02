@@ -13,6 +13,7 @@ import Girls from './components/Girls';
 import Client from './components/Client';
 import Bookdetalis from './components/Bookdetalis';
 import Mine from './components/Mine';
+import Bookcatalog from  './components/Bookcatalog'
 
 import './assets/sass/public/vw.scss';
 import './assets/sass/public/common.scss';
@@ -74,6 +75,13 @@ let App = (props) => {
          path: '/mine',
          name: 'mine',
          component: Mine,
+      },
+      {
+         id: 9,
+         title: '目录',
+         path: '/bookcatalog',
+         name: 'bookcatalog',
+         component: Bookcatalog,
       },
    ];
 
