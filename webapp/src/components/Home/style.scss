@@ -39,26 +39,27 @@
                margin-left: vw(228);
                font-size: vw(35);
             }
-            input{
-               width:vw(400);
-               height:vw(54);
-               margin-top:vw(10);
-               border:none;
-               background:#76c7f9;
-               color:#fff !important;
+
+            input {
+               width: vw(400);
+               height: vw(54);
+               margin-top: vw(10);
+               border: none;
+               background: #76c7f9;
                font-size: vw(26);
                z-index: 2;
             }
-            span{
-               position: absolute;
-               top:vw(4);
-               left:vw(20);
-               font-size: vw(27);
+
+            input::-webkit-input-placeholder,
+            textarea::-webkit-input-placeholder {
+               color:#fff;
+               font-size: vw(28);
             }
-            .tubiao{
+
+            .tubiao {
                position: absolute;
-               top:vw(19);
-               right:vw(70);
+               top: vw(4);
+               right: vw(20);
             }
          }
 

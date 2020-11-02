@@ -105,13 +105,9 @@ class Home extends React.Component {
                <div className="head">
                   <h1><img src="https://s.zhulang.com/wap/v2/style/img/mlogo-170730.png" alt="" /></h1>
                   <a className="search">
-                     {/* <input type="text" /><span>搜小说、作者</span> */}
                      <input type="text" placeholder='搜小说、作者' />
                      <i className="tubiao"><SearchOutlined style={{ display: 'inline-block' }} /></i>
                   </a >
-
-
-                  {/* <a className="search">搜小说、作者<i><SearchOutlined /></i></a > */}
                   <a className="user"><UserOutlined onClick={() => { this.props.history.push('/login') }} /></a>
                </div>
                {/* 轮播图 */}
