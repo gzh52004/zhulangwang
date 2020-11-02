@@ -7,17 +7,22 @@ import {AppstoreOutlined, MenuUnfoldOutlined, MenuFoldOutlined, PieChartOutlined
 import './style.scss';
 
 const { SubMenu } = Menu;
-
-
 const onClick = ({ key }) => {
-    message.info(`Click on item ${key}`);
+    // message.info(`Click on item ${key}`);
 };
+
+
+
+const cancel = function(){
+    // localStorage.removeItem('userInfo');
+    console.log(222);
+}
 
 const menu = (
     <Menu onClick={onClick}>
-        <Menu.Item key="1">注销</Menu.Item>
-        <Menu.Item key="2">2nd memu item</Menu.Item>
-        <Menu.Item key="3">3rd menu item</Menu.Item>
+        <Menu.Item key="1" onClick={cancel}>退出</Menu.Item>
+        <Menu.Item key="2">修改用户信息</Menu.Item>
+        {/* <Menu.Item key="3">3rd menu item</Menu.Item> */}
     </Menu>
 );
 
@@ -26,6 +31,10 @@ class Home extends React.Component {
     state = {
         collapsed: false,
     };
+
+    componentDidMount(){
+        console.log(11);
+    }
 
      // 对本地信息token进行验证，如果没有或者不对就退出到登录页面
     async componentDidMount(){
@@ -43,7 +52,7 @@ class Home extends React.Component {
                 token,
             }
         })
-        console.log(data,222)
+        // console.log(data,222);
         if(!data.code){
             this.props.history.push('/login');
         }

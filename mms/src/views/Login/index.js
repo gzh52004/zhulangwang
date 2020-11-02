@@ -42,7 +42,7 @@ const Login = function (props) {
       const {data} = await request.get('/user/manLog',{
          params:value
       });
-      console.log(data,222);
+      // console.log(data,222);
       if(data.code){
          // 本地储存用户名和密钥
          if(values.remember){
