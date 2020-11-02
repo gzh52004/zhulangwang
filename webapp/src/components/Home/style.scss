@@ -39,6 +39,27 @@
                margin-left: vw(228);
                font-size: vw(35);
             }
+            input{
+               width:vw(400);
+               height:vw(54);
+               margin-top:vw(10);
+               border:none;
+               background:#76c7f9;
+               color:#fff !important;
+               font-size: vw(26);
+               z-index: 2;
+            }
+            span{
+               position: absolute;
+               top:vw(4);
+               left:vw(20);
+               font-size: vw(27);
+            }
+            .tubiao{
+               position: absolute;
+               top:vw(19);
+               right:vw(70);
+            }
          }
 
          .user {
