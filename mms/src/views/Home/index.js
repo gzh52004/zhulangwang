@@ -14,8 +14,8 @@ const onClick = ({ key }) => {
 
 
 const cancel = function(){
-    // localStorage.removeItem('userInfo');
-    console.log(222);
+    localStorage.removeItem('userInfo');
+    // console.log(222);
 }
 
 const menu = (
